@@ -150,6 +150,7 @@ public class WebDriverManager {
         for (int i = blockNumber - 1; i < mainBlocks.size(); i++) {
             WebElement block = mainBlocks.get(i);
             String blockName = presenceOfInnerElement(block, By.xpath(Locators.TITLE_MAIN_BLOCK)).getText();
+            MyLogger.logger.info(" ");
             MyLogger.logger.info("Блок " + blockName + " (" + (i + 1) + " из " + mainBlocks.size() + " )");
             MyLogger.logger.info("Скачиваем файлы из блока");
             List<WebElement> fileBlocks = block.findElements(By.xpath(Locators.FILE_BLOCKS));
@@ -166,6 +167,7 @@ public class WebDriverManager {
         for (int k = 0; k < fileBlocks.size(); k++) {
             WebElement fileBlock = fileBlocks.get(k);
             String fileName = presenceOfInnerElement(fileBlock, By.xpath(Locators.FILE_NAME)).getText();
+            MyLogger.logger.info("<***********************************************************>");
             MyLogger.logger.info("Скачиваем файл №" + (k + 1) + " " + fileName);
             innerClick(fileBlock, By.xpath(Locators.OUTSIDE_DOWNLOAD_BUTTON), true);
             click(By.xpath(Locators.INSIDE_DOWNLOAD_BUTTON), true);
@@ -180,7 +182,7 @@ public class WebDriverManager {
         long startTime = System.currentTimeMillis();
         long endTime = startTime + (timeoutSeconds * 1000);
 
-        MyLogger.logger.info("Ожидание загрузки файла в: " + downloadDir);
+        MyLogger.logger.info("Ожидание загрузки файла!");
 
         while (System.currentTimeMillis() < endTime) {
             // Получаем список файлов
@@ -204,7 +206,6 @@ public class WebDriverManager {
             }
         }
         MyLogger.logger.info("Файл загружен");
-        MyLogger.logger.info("<---------------------------------------------------------->");
     }
 
 
