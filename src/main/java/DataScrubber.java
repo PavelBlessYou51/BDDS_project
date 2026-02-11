@@ -7,7 +7,7 @@ public class DataScrubber
     {
         WebDriverManager manager = new WebDriverManager();
         manager.init();
-        manager.downloadFiles(6);
+        manager.downloadFiles(106);
         manager.quitClose();
     }
 }
