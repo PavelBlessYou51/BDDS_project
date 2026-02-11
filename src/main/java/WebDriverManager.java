@@ -166,7 +166,7 @@ public class WebDriverManager {
         for (int k = 0; k < fileBlocks.size(); k++) {
             WebElement fileBlock = fileBlocks.get(k);
             String fileName = presenceOfInnerElement(fileBlock, By.xpath(Locators.FILE_NAME)).getText();
-            MyLogger.logger.info("Скачиваем файл №" + (i + 1) + " " + fileName);
+            MyLogger.logger.info("Скачиваем файл №" + (k + 1) + " " + fileName);
             innerClick(fileBlock, By.xpath(Locators.OUTSIDE_DOWNLOAD_BUTTON), true);
             click(By.xpath(Locators.INSIDE_DOWNLOAD_BUTTON), true);
             waitForDownload();
