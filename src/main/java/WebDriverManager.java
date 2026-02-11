@@ -152,9 +152,7 @@ public class WebDriverManager {
             String blockName = presenceOfInnerElement(block, By.xpath(Locators.TITLE_MAIN_BLOCK)).getText();
             MyLogger.logger.info("Блок " + blockName + " (" + (i + 1) + " из " + mainBlocks.size() + " )");
             MyLogger.logger.info("Скачиваем файлы из блока");
-
             List<WebElement> fileBlocks = block.findElements(By.xpath(Locators.FILE_BLOCKS));
-
             MyLogger.logger.info("Всего файлов в блоке: " + fileBlocks.size());
             filesDownloader(fileBlocks, i);
         }

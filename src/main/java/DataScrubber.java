@@ -5,9 +5,9 @@ public class DataScrubber
 {
     public static void main( String[] args )
     {
-        WebDriverManager manager = new WebDriverManager();
-        manager.init();
-        manager.downloadFiles(106);
-        manager.quitClose();
+        WebDriverManager manager = new WebDriverManager(); // инициализация экземпляра менеджера
+        manager.init(); // инициализация бразера и его открытие
+        manager.downloadFiles(106); // загрузка файлов
+        manager.quitClose(); // закрытие и убийство браузера
     }
 }
